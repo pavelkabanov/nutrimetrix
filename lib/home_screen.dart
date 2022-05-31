@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: size.width < 330 ? 15 : size.height * .1,
+                            height: size.width < 330 ? 15 : size.height * .06,
                           ),
                           Center(
                             child: AutoSizeText(

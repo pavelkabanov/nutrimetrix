@@ -9,6 +9,11 @@ class NutritionProvider {
     final translator = GoogleTranslator();
     query = await translator.translate(query, from: 'auto', to: 'en');
 
+    query = query.toString();
+    if (double.tryParse(query[0] as String) == null) {
+      query = '1 ' + query;
+    }
+
     // API-запрос
     final url = Uri.parse('${dotenv.env['API_URL']}&ingr=$query');
     final response = await http.get(url);
