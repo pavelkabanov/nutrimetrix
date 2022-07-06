@@ -7,7 +7,6 @@ import 'package:nutrimetrix/utils/search_examples.dart';
 class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final NutritionBloc nutritionBloc = context.read<NutritionBloc>();
     return Column(
       children: [
         Container(
@@ -29,7 +28,7 @@ class SearchBar extends StatelessWidget {
           ),
           child: TextField(
             onSubmitted: (query) {
-              nutritionBloc.add(NutritionLoadEvent(query));
+              context.read<NutritionBloc>().add(NutritionLoadEvent(query));
             },
             decoration: const InputDecoration(
               // hintText: "Поиск...",
