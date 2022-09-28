@@ -1,0 +1,21 @@
+{
+    "find_out_nutritional_value_of_food": "Find out the nutritional value of food",
+    "nutritional_value": "Nutritional value",
+    "for_example": "For example",
+    "calories": "Calories",
+    "kcal": "kcal",
+    "daily_value": "Daily value",
+    "g": "g",
+    "mg": "mg",
+    "total_fat": "Total Fat",
+    "saturated_fat": "Saturated Fat",
+    "trans_fat": "Trans Fat",
+    "carbohydrate": "Carbohydrate",
+    "protein": "Protein",
+    "cholesterol": "Cholesterol",
+    "sodium": "Sodium",
+    "calcium": "Calcium",
+    "iron": "Iron",
+    "phosphorus": "Phosphorus",
+    "error_check_internet_connection": "Error. Please, check the internet connection."
+}

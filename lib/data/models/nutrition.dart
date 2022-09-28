@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:equatable/equatable.dart';
+import 'package:nutrimetrix/generated/locale_keys.g.dart';
 
 class Nutrition extends Equatable {
   // Калории
@@ -7,76 +9,76 @@ class Nutrition extends Equatable {
   // Пищевые элементы
   Map nutrients = {
     'fats': {
-      'label': 'Жиры',
+      'label': LocaleKeys.total_fat,
       'quantity': 0,
       'daily': 0,
       'priority': 3,
-      'unit': 'г',
+      'unit': LocaleKeys.g,
       'subs': {
         'saturatedFats': {
-          'label': 'Насыщенные жиры',
+          'label': LocaleKeys.saturated_fat,
           'quantity': 0,
           'daily': 0,
           'priority': 1,
-          'unit': 'г',
+          'unit': LocaleKeys.g,
         },
         'transFats': {
-          'label': 'Транс жиры',
+          'label': LocaleKeys.trans_fat,
           'quantity': 0,
           'daily': 0,
           'priority': 1,
-          'unit': 'г',
+          'unit': LocaleKeys.g,
         },
       },
     },
     'carbohydrates': {
-      'label': 'Углеводы',
+      'label': LocaleKeys.carbohydrate,
       'quantity': 0,
       'daily': 0,
       'priority': 3,
-      'unit': 'г',
+      'unit': LocaleKeys.g,
     },
     'proteins': {
-      'label': 'Белки',
+      'label': LocaleKeys.protein,
       'quantity': 0,
       'daily': 0,
       'priority': 3,
-      'unit': 'г',
+      'unit': LocaleKeys.g,
     },
     'cholesterol': {
-      'label': 'Холестерин',
+      'label': LocaleKeys.cholesterol,
       'quantity': 0,
       'daily': 0,
       'priority': 2,
-      'unit': 'мг',
+      'unit': LocaleKeys.mg,
     },
     'sodium': {
-      'label': 'Натрий',
+      'label': LocaleKeys.sodium,
       'quantity': 0,
       'daily': 0,
       'priority': 2,
-      'unit': 'мг',
+      'unit': LocaleKeys.mg,
     },
     'calcium': {
-      'label': 'Кальций',
+      'label': LocaleKeys.calcium,
       'quantity': 0,
       'daily': 0,
       'priority': 2,
-      'unit': 'мг',
+      'unit': LocaleKeys.mg,
     },
     'iron': {
-      'label': 'Железо',
+      'label': LocaleKeys.iron,
       'quantity': 0,
       'daily': 0,
       'priority': 2,
-      'unit': 'мг',
+      'unit': LocaleKeys.mg,
     },
     'phosphorus': {
-      'label': 'Фосфор',
+      'label': LocaleKeys.phosphorus,
       'quantity': 0,
       'daily': 0,
       'priority': 2,
-      'unit': 'мг',
+      'unit': LocaleKeys.mg,
     },
   };
 

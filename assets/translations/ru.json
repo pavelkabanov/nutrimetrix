@@ -1,0 +1,21 @@
+{
+    "find_out_nutritional_value_of_food": "Узнайте пищевую ценность продуктов",
+    "nutritional_value": "Пищевая ценность",
+    "for_example": "Например",
+    "calories": "Калории",
+    "kcal": "ккал",
+    "daily_value": "Сут. норма",
+    "g": "г",
+    "mg": "мг",
+    "total_fat": "Жиры",
+    "saturated_fat": "Насыщенные жыры",
+    "trans_fat": "Транс жиры",
+    "carbohydrate": "Углеводы",
+    "protein": "Белки",
+    "cholesterol": "Холестерин",
+    "sodium": "Натрий",
+    "calcium": "Кальций",
+    "iron": "Железо",
+    "phosphorus": "Фосфор",
+    "error_check_internet_connection": "Ошибка загрузки данных. Проверьте интернет-соединение."
+}

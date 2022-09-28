@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nutrimetrix/bloc/nutrition_bloc.dart';
 import 'package:nutrimetrix/data/repositories/nutrition_repository.dart';
+import 'package:nutrimetrix/generated/locale_keys.g.dart';
 import 'package:nutrimetrix/widgets/info_table.dart';
 import 'package:nutrimetrix/widgets/search_bar.dart';
 
@@ -15,6 +17,19 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider<NutritionBloc>(
       create: (context) => NutritionBloc(nutritionRepository),
       child: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        floatingActionButton: FloatingActionButton(
+          mini: true,
+          backgroundColor: Color(0xFFA9ECAA),
+          onPressed: () {
+            if (context.locale == Locale('ru')) {
+              context.setLocale(Locale('en'));
+            } else {
+              context.setLocale(Locale('ru'));
+            }
+          },
+          child: Icon(Icons.language),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -41,7 +56,9 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Center(
                             child: AutoSizeText(
-                              'Узнайте пищевую ценность продуктов',
+                              // 'Узнайте пищевую ценность продуктов'
+                              LocaleKeys.find_out_nutritional_value_of_food
+                                  .tr(),
                               maxLines: 2,
                               textAlign: TextAlign.center,
                               style: Theme.of(context)

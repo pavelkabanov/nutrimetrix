@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nutrimetrix/bloc/nutrition_bloc.dart';
 import 'package:nutrimetrix/data/models/nutrition.dart';
+import 'package:nutrimetrix/generated/locale_keys.g.dart';
 
 class InfoTable extends StatefulWidget {
   @override
@@ -24,7 +26,8 @@ class _InfoTable3State extends State<InfoTable> with TickerProviderStateMixin {
     List<Widget> nlist = [];
     nlist.addAll([
       Text(
-        'Пищевая ценность',
+        // 'Пищевая ценность'
+        LocaleKeys.nutritional_value.tr(),
         style: Theme.of(ctx).textTheme.headline5,
         textAlign: TextAlign.center,
       ),
@@ -34,14 +37,15 @@ class _InfoTable3State extends State<InfoTable> with TickerProviderStateMixin {
           Expanded(
             flex: 5,
             child: Text(
-              'Калории',
+              // 'Калории'
+              LocaleKeys.calories.tr(),
               style: Theme.of(ctx).textTheme.headline5,
             ),
           ),
           Expanded(
             flex: 2,
             child: Text(
-              nutrition.calories.toString() + ' ккал',
+              nutrition.calories.toString() + ' ' + LocaleKeys.kcal.tr(),
               textAlign: TextAlign.end,
             ),
           ),
@@ -50,7 +54,7 @@ class _InfoTable3State extends State<InfoTable> with TickerProviderStateMixin {
       const Divider(),
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
-        children: const [Text('Сут. норма, %')],
+        children: [Text('${LocaleKeys.daily_value.tr()}, %')],
       ),
       const Divider()
     ]);
@@ -61,7 +65,7 @@ class _InfoTable3State extends State<InfoTable> with TickerProviderStateMixin {
             Expanded(
               flex: 3,
               child: Text(
-                item.value['label'],
+                tr(item.value['label']),
                 style: item.value['priority'] == 3
                     ? Theme.of(ctx).textTheme.headline5
                     : Theme.of(ctx).textTheme.headline6,
@@ -72,7 +76,7 @@ class _InfoTable3State extends State<InfoTable> with TickerProviderStateMixin {
               child: Text(
                 item.value['quantity'].toStringAsFixed(2) +
                     ' ' +
-                    item.value['unit'],
+                    tr(item.value['unit']),
                 textAlign: TextAlign.end,
               ),
             ),
@@ -95,7 +99,7 @@ class _InfoTable3State extends State<InfoTable> with TickerProviderStateMixin {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Text(
-                    i.value['label'],
+                    tr(i.value['label']),
                     style: Theme.of(ctx)
                         .textTheme
                         .bodyText2!
@@ -106,7 +110,9 @@ class _InfoTable3State extends State<InfoTable> with TickerProviderStateMixin {
               Expanded(
                 flex: 2,
                 child: Text(
-                  i.value['quantity'].toStringAsFixed(2) + ' г',
+                  i.value['quantity'].toStringAsFixed(2) +
+                      ' ' +
+                      tr(i.value['unit']),
                   textAlign: TextAlign.end,
                 ),
               ),
@@ -179,9 +185,10 @@ class _InfoTable3State extends State<InfoTable> with TickerProviderStateMixin {
           }
 
           if (state is NutritionErrorState) {
-            return const Center(
+            return Center(
               child: Text(
-                'Ошибка загрузки данных. Проверьте интернет-соединение.',
+                // 'Ошибка загрузки данных. Проверьте интернет-соединение.',
+                LocaleKeys.error_check_internet_connection.tr(),
                 style: TextStyle(fontSize: 20),
               ),
             );

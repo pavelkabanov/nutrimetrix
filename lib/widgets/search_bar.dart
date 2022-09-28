@@ -1,7 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nutrimetrix/bloc/nutrition_bloc.dart';
+import 'package:nutrimetrix/generated/locale_keys.g.dart';
 import 'package:nutrimetrix/utils/search_examples.dart';
 
 class SearchBar extends StatelessWidget {
@@ -38,7 +40,7 @@ class SearchBar extends StatelessWidget {
           ),
         ),
         AutoSizeText(
-          'Например: ${(SEARCH_EXAMPLES.toList()..shuffle()).first}',
+          '${LocaleKeys.for_example.tr()}: ${(SEARCH_EXAMPLES[context.locale.toString()].toList()..shuffle()).first}',
           maxLines: 1,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.subtitle1!.copyWith(
